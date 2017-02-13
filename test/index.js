@@ -3,9 +3,9 @@ const husky = require('..')
 
 const {equal} = require('assert')
 
-test('returns plain string without keys', () => {
-  const plainString = 'lorem ipsum'
-  const template = husky(plainString)
+test('returns string without keys', () => {
+  const text = 'lorem ipsum'
+  const template = husky(text)
 
-  equal(plainString, template())
+  equal(text.toString(), template())
 })
