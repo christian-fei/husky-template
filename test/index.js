@@ -3,9 +3,8 @@ const husky = require('..')
 
 const {equal} = require('assert')
 
-test('renders plain string without interpolation', () => {
+test('returns plain string without keys', () => {
   const plainString = 'lorem ipsum'
-  console.log(husky)
   const template = husky(plainString)
 
   equal(plainString, template())
