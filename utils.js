@@ -1,6 +1,7 @@
 module.exports = {
   extractKeys,
   accessPropertyOf,
+  lookupKey
 }
 
 function extractKeys (stringProperties) {
@@ -9,7 +10,7 @@ function extractKeys (stringProperties) {
 
 function accessPropertyOf (object, propertiesList) {
   let context = object
-  for(let i = 0; i <= propertiesList.length; i++) {
+  for (let i = 0; i <= propertiesList.length; i++) {
     const propertyName = propertiesList[i]
     if (i === propertiesList.length) {
       return context
@@ -20,4 +21,8 @@ function accessPropertyOf (object, propertiesList) {
       return null
     }
   }
+}
+
+function lookupKey (object, propertyNotation) {
+  return accessPropertyOf(object, extractKeys(propertyNotation))
 }
