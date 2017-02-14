@@ -21,3 +21,9 @@ test('returns curried formatted string', () => {
   equal('lorem ipsum {amet}', curriedTemplate)
   equal('lorem ipsum amet', curriedTemplate({amet}))
 })
+
+test('supports objects', () => {
+  const template = husky('lorem ipsum {deep.amet}')
+  const amet = 'amet'
+  equal('lorem ipsum amet', template({deep: {amet}}))
+})
