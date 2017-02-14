@@ -3,12 +3,6 @@ const husky = require('..')
 
 const {equal} = require('assert')
 
-test('returns string without keys and type is husky', () => {
-  const text = 'lorem ipsum'
-
-  equal(text, husky(text))
-})
-
 test('returns formatted string', () => {
   const ipsum = 'ipsum'
   const text = 'lorem {ipsum}'

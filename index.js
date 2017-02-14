@@ -1,11 +1,12 @@
+module.exports = huskyFrom
 
-module.exports = function husky (template) {
+function huskyFrom (template) {
   const huskyTemplate = function (data) {
     const pattern = /\{(.*?)\}/g
     const result = template.replace(pattern, (match, key) => {
       return data[key] || match
     })
-    return husky(result)
+    return huskyFrom(result)
   }
   huskyTemplate.toString = () => template
 
