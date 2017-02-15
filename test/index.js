@@ -30,9 +30,9 @@ test('supports objects', () => {
 
 test('returns partially formatted template', () => {
   let _husky = husky('lorem ipsum {amet}')
-  equal('lorem ipsum {amet}', _husky())
+  equal('lorem ipsum {amet}', _husky)
 
   const amet = 'amet'
   _husky = _husky({amet})
-  equal('lorem ipsum amet', _husky())
+  equal('lorem ipsum amet', _husky)
 })

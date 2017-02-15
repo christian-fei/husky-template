@@ -1,20 +1,19 @@
 const utils = require('./utils')
 const pattern = /(\{.*?\})/g
+const {assign} = Object
 
-module.exports = huskyFrom
+module.exports = function husky (template) {
+  return assign(huskyFrom, {toString})
 
-function huskyFrom (template) {
-  const huskyTemplate = function (object) {
-    const result = template.replace(pattern, (match, notation) => {
-      return utils.lookupKey(object, notation) || match
-    })
-    return Object.assign(huskyFrom(result), {
-      toString () {
-        return result
-      }
-    })
+  function huskyFrom(values) {
+    return husky(template.replace(pattern, using(values)))
   }
-  huskyTemplate.toString = () => template
 
-  return huskyTemplate
+  function using(values) {
+    return (match, notation) => utils.lookupKey(values, notation) || match
+  }
+
+  function toString () {
+    return template
+  }
 }
