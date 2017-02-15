@@ -27,3 +27,12 @@ test('supports objects', () => {
   const amet = 'amet'
   equal('lorem ipsum amet', template({deep: {amet}}))
 })
+
+test('returns partially formatted template', () => {
+  let _husky = husky('lorem ipsum {amet}')
+  equal('lorem ipsum {amet}', _husky())
+
+  const amet = 'amet'
+  _husky = _husky({amet})
+  equal('lorem ipsum amet', _husky())
+})

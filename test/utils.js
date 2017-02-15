@@ -3,19 +3,8 @@ const utils = require('../utils')
 
 const {equal, deepEqual} = require('assert')
 
-test('extract object keys from string', () => {
-  deepEqual(['deep'], utils.byKey('deep'))
-  deepEqual(['deep', 'foo', 'bar'], utils.byKey('deep.foo.bar'))
-})
-
-test('accesses deep property of object by keys array', () => {
+test('.lookupKey returns deep property value by lookup notation', () => {
   const data = {deep: {foo: 'baz'}}
 
-  equal('baz', utils.keyFor(data, ['deep', 'foo']))
-})
-
-test('propFor returns the property in string notation of an object', () => {
-  const data = {deep: {foo: 'baz'}}
-
-  equal('baz', utils.lookupKey(data, 'deep.foo'))
+  equal('baz', utils.lookupKey(data, '{deep.foo}'))
 })
