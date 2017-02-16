@@ -4,12 +4,10 @@ module.exports = {
 
 function lookupKey (object, notation) {
   return notation
-  .slice(1, -1)
   .split('.')
   .reduce((context, propertyName) => {
-    if (context && context[propertyName]) {
-      return context[propertyName]
-    }
-    return null
+    return context && context[propertyName]
+      ? context[propertyName]
+      : null
   }, object)
 }

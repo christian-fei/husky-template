@@ -1,5 +1,5 @@
 const utils = require('./utils')
-const pattern = /(\{.*?\})/g
+const pattern = /\{(.*?)\}/g
 const {assign} = Object
 
 module.exports = function husky (template) {
