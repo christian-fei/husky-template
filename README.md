@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/christian-fei/husky.svg?branch=master)](https://travis-ci.org/christian-fei/husky)
+[![Build Status](https://travis-ci.org/christian-fei/husky-template.svg?branch=master)](https://travis-ci.org/christian-fei/husky-template)
 
 # What?
 

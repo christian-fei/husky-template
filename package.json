@@ -1,5 +1,5 @@
 {
-  "name": "husky",
+  "name": "husky-template",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/christian-fei/husky.git"
+    "url": "git+https://github.com/christian-fei/husky-template.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/christian-fei/husky/issues"
+    "url": "https://github.com/christian-fei/husky-template/issues"
   },
-  "homepage": "https://github.com/christian-fei/husky#readme",
+  "homepage": "https://github.com/christian-fei/husky-template#readme",
   "devDependencies": {
     "m.test": "0.0.53"
   }
