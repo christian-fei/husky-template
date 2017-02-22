@@ -10,7 +10,14 @@ module.exports = function huskyTemplate (template) {
   }
 
   function using(values) {
-    return (match, notation) => utils.lookupKey(values, notation) || match
+    return (match, notation) => {
+      const key = utils.lookupKey(values, notation)
+      if (key) { return key }
+      try {
+        return utils.evaluateOn(values, notation)
+      } catch (e) {}
+      return match
+    }
   }
 
   function toString () {

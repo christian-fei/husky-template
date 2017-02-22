@@ -1,5 +1,6 @@
 module.exports = {
-  lookupKey
+  lookupKey,
+  evaluateOn
 }
 
 function lookupKey (object, notation) {
@@ -10,4 +11,10 @@ function lookupKey (object, notation) {
       ? context[propertyName]
       : null
   }, object)
+}
+
+function evaluateOn (object, evaluation) {
+  return (function () {
+    return eval(evaluation)
+  }.call(object))
 }

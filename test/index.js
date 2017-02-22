@@ -30,4 +30,11 @@ test('husky-template', () => {
     template = template({dolor: {sit: {amet}}})
     equal(template, 'lorem ipsum dolor sit amet')
   })
+
+  test('maps over object property', () => {
+    const ipsum = 'ipsum'.split('')
+    let template = huskyTemplate(`lorem {this.ipsum.map(i => i + '_').join('')}`)
+    template = template({ipsum})
+    equal(template.toString(), 'lorem i_p_s_u_m_')
+  })
 })

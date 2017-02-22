@@ -9,4 +9,11 @@ test('utils', () => {
 
     equal('baz', utils.lookupKey(data, 'deep.foo'))
   })
+
+  test('.evaluateOn evaluates code on data', () => {
+    const data = {numbers: [1, 2, 3]}
+
+    deepEqual([2, 4, 6], utils.evaluateOn(data, 'this.numbers.map(n => n * 2)'))
+    deepEqual('246', utils.evaluateOn(data, `this.numbers.map(n => n * 2).join('')`))
+  })
 })

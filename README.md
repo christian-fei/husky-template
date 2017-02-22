@@ -50,6 +50,18 @@ const amet = 'amet'
 equal('lorem ipsum amet', template({deep: {amet}}))
 ```
 
+##### map over object properties
+
+[see test](./test/index.js#L34)
+
+```javascript
+test('maps over object property', () => {
+  const ipsum = 'ipsum'.split('')
+  let template = huskyTemplate(`lorem {this.ipsum.map(i => i + '_').join('')}`)
+  template = template({ipsum})
+  equal(template.toString(), 'lorem i_p_s_u_m_')
+})
+```
 
 ## tests
 
