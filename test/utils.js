@@ -1,7 +1,7 @@
 /* global test */
 const utils = require('../utils')
 
-const {equal, deepEqual} = require('assert')
+const {ok, equal, deepEqual} = require('assert')
 
 test('utils', () => {
   test('.lookupKey returns deep property value by lookup notation', () => {
@@ -15,5 +15,9 @@ test('utils', () => {
 
     deepEqual([2, 4, 6], utils.evaluateOn(data, 'this.numbers.map(n => n * 2)'))
     deepEqual('246', utils.evaluateOn(data, `this.numbers.map(n => n * 2).join('')`))
+  })
+
+  test('.evaluateOn does never throw', () => {
+    equal(undefined, utils.evaluateOn({}, 'this.is.invalid.code'))
   })
 })

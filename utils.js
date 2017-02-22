@@ -14,7 +14,9 @@ function lookupKey (object, notation) {
 }
 
 function evaluateOn (object, evaluation) {
-  return (function () {
-    return eval(evaluation)
-  }.call(object))
+  try {
+    return (function () {
+      return eval(evaluation)
+    }.call(object))
+  } catch (e) {}
 }

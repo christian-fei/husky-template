@@ -11,12 +11,7 @@ module.exports = function huskyTemplate (template) {
 
   function using(values) {
     return (match, notation) => {
-      const key = utils.lookupKey(values, notation)
-      if (key) { return key }
-      try {
-        return utils.evaluateOn(values, notation)
-      } catch (e) {}
-      return match
+      return utils.lookupKey(values, notation) || utils.evaluateOn(values, notation) || match
     }
   }
 
