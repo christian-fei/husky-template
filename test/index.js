@@ -12,29 +12,22 @@ test('husky-template', () => {
     equal('lorem ipsum', template({ipsum}))
   })
 
-  test('returns curried formatted string', () => {
+  test('returns partially formatted string', () => {
     const ipsum = 'ipsum'
-    const amet = 'amet'
-    const text = 'lorem {ipsum} {amet}'
+    const text = 'lorem {ipsum}'
     const template = huskyTemplate(text)
 
-    const curriedTemplate = template({ipsum})
-    equal('lorem ipsum {amet}', curriedTemplate)
-    equal('lorem ipsum amet', curriedTemplate({amet}))
+    equal('lorem {ipsum}', template({}))
+    equal('lorem ipsum', template({ipsum}))
   })
 
-  test('supports deep object properties', () => {
-    const template = huskyTemplate('lorem ipsum {deep.amet}')
-    const amet = 'amet'
-    equal('lorem ipsum amet', template({deep: {amet}}))
-  })
-
-  test('returns partially formatted template', () => {
-    let template = huskyTemplate('lorem ipsum {amet}')
-    equal('lorem ipsum {amet}', template)
-
-    const amet = 'amet'
-    template = template({amet})
-    equal('lorem ipsum amet', template)
+  test('replaces all tokens provided in string', () => {
+    const ipsum = 'ipsum'
+    const amet = 'dolor sit amet'
+    let template = huskyTemplate('lorem {ipsum} {dolor.sit.amet}')
+    template = template({ipsum})
+    equal(template, 'lorem ipsum {dolor.sit.amet}')
+    template = template({dolor: {sit: {amet}}})
+    equal(template, 'lorem ipsum dolor sit amet')
   })
 })
