@@ -3,14 +3,10 @@ module.exports = {
   evaluateOn
 }
 
-function lookupKey (object, notation) {
-  return notation
-  .split('.')
-  .reduce((context, propertyName) => {
-    return context && context[propertyName]
-      ? context[propertyName]
-      : null
-  }, object)
+function lookupKey (object, objectNotation) {
+  return objectNotation
+        .split('.')
+        .reduce((context, property) => context ? context[property] : null, object)
 }
 
 function evaluateOn (object, evaluation) {
