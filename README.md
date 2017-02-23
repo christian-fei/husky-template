@@ -1,4 +1,11 @@
-[![build status](https://travis-ci.org/christian-fei/husky-template.svg?branch=master)](https://travis-ci.org/christian-fei/husky-template)
+[![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
+
+[travis-image]: https://img.shields.io/travis/christian-fei/husky-template.svg?style=flat
+[travis-url]: https://travis-ci.org/christian-fei/husky-template
+[npm-image]: https://img.shields.io/npm/v/husky-template.svg?style=flat
+[npm-url]: https://npmjs.org/package/husky-template
+[downloads-image]: https://img.shields.io/npm/dm/husky-template.svg?style=flat
+[downloads-url]: https://npmjs.org/package/husky-template
 
 # installation
 
