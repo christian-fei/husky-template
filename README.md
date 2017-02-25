@@ -1,5 +1,4 @@
 [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
-
 [travis-image]: https://img.shields.io/travis/christian-fei/husky-template.svg?style=flat
 [travis-url]: https://travis-ci.org/christian-fei/husky-template
 [npm-image]: https://img.shields.io/npm/v/husky-template.svg?style=flat
