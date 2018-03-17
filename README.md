@@ -1,4 +1,7 @@
-[![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
+[![travis][travis-image]][travis-url]
+[![npm][npm-image]][npm-url]
+[![downloads][downloads-image]][downloads-url]
+
 [travis-image]: https://img.shields.io/travis/christian-fei/husky-template.svg?style=flat
 [travis-url]: https://travis-ci.org/christian-fei/husky-template
 [npm-image]: https://img.shields.io/npm/v/husky-template.svg?style=flat
@@ -9,7 +12,7 @@
 # installation
 
 ```
-npm install --save husky-template
+npm install husky-template
 ```
 
 ```javascript
@@ -27,7 +30,7 @@ template = template({dolor:{sit:{amet}}}) // lorem ipsum dolor sit amet
 
 # usage
 
-create an instance of husky by passing it a string with placeholders for you values.
+create an instance of husky by passing it a string with placeholders for your values.
 
 like this:
 
@@ -44,7 +47,7 @@ equal('lorem ipsum amet', curriedTemplate({amet}))
 
 ##### curried templates
 
-use to power of partial application on your templates! [See usage-section](#usage).
+use the power of partial application on your templates! [See usage-section](#usage).
 
 ##### deep object property support
 
